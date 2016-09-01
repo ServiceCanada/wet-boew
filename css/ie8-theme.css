@@ -2,7 +2,7 @@
 /*!
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
- * v4.0.22-development - 2016-07-19
+ * v4.0.23-development - 2016-09-01
  *
  */
 @charset "UTF-8";
@@ -6213,6 +6213,12 @@ q:before, q:after {
   opacity: .1; }
 
 /*
+ *	Removes bold from elements
+ */
+.fnt-nrml {
+  font-weight: normal; }
+
+/*
  *	Fix for missing bullets in Chrome and Safari
  */
 [class*=clmn-] {
@@ -8258,6 +8264,8 @@ table.dataTable {
     background: #eee; }
     .wb-tabs.carousel-s2.wb-init {
       padding-bottom: 4.375em; }
+    .wb-tabs.carousel-s2.exclude-controls {
+      padding-bottom: 0; }
     .wb-tabs.carousel-s2 [role="tablist"] {
       bottom: 0;
       position: absolute;
