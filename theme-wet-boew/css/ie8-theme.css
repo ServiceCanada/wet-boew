@@ -2,7 +2,7 @@
 /*!
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
  * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
- * v4.0.22-development - 2016-07-25
+ * v4.0.23-development - 2016-09-08
  *
  */
 @charset "UTF-8";
@@ -8258,6 +8258,8 @@ table.dataTable {
     background: #eee; }
     .wb-tabs.carousel-s2.wb-init {
       padding-bottom: 4.375em; }
+    .wb-tabs.carousel-s2.exclude-controls {
+      padding-bottom: 0; }
     .wb-tabs.carousel-s2 [role="tablist"] {
       bottom: 0;
       position: absolute;
@@ -8388,44 +8390,6 @@ table.dataTable {
   padding: 2px; }
 
 /**
- * Cursor styles
- */
-/*
-.olCursorWait {
-	cursor: wait;
-}
-
-.olDragDown {
-	@extend %geomap-overflow-cursor-move;
-}
-
-.olDrawBox {
-	cursor: crosshair;
-}
-
-.olControlDragFeatureOver {
-	@extend %geomap-overflow-cursor-move;
-}
-
-.olControlDragFeatureActive {
-	&.olControlDragFeatureOver {
-		&.olDragDown {
-			cursor: grabbing;
-		}
-	}
-}
-*/
-/**
- * Animations
- */
-/*
-.olLayerGrid {
-	.olTileImage {
-		transition: opacity 0.2s linear;
-	}
-}
-
-/**
  * GeoMap
  */
 .wb-geomap-map {
@@ -8434,11 +8398,6 @@ table.dataTable {
   .wb-geomap-map.active {
     outline-color: #07f; }
 
-/*
-.wb-geomap-detail {
-	margin-bottom: 10px;
-	margin-top: 10px;
-}*/
 .geomap-legend-detail {
   padding-top: 10px; }
 
@@ -8469,13 +8428,15 @@ table.dataTable {
   margin-bottom: 0px !important; }
 
 .geomap-geoloc {
-  width: 800px;
-  max-width: 68%;
-  min-width: 200px;
-  top: 10px;
-  left: 55px; }
+  top: 0.25em;
+  left: 0.25em;
+  border: none;
+  background: transparent; }
   .geomap-geoloc input[type="text"] {
-    width: 100%; }
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    box-shadow: 1px 2px 4px #999; }
 
 .geomap-aoi legend {
   border: 0;
@@ -8489,23 +8450,24 @@ table.dataTable {
 
 /* OL3 */
 .ol-geolocate {
-  left: 0.5em;
-  top: 127px;
-  /*button {
-		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAARCAYAAAAougcOAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAUlJREFUOBGtlMtKxEAQRcc3foOrcaMrl4KCyPgP/qOooOLWj3EjuBQfKL7PmXRhKJMYnFy4/bipvtXV3WQ0mg1zLF9MFmqDYB6XbL6BtlLcZ0rk4qViFN0+gyt4C8dFzBsocnfXZD5hyQX8KjyrWRjfGwbnXWl+DsPc/gVuQ5ErrdSGtsncY8nmj2gmOSoerpN/IgftsuIEfsDY/Rtj6fwT7kCRq67UjnbCt/qZR4JI9sr3ehVa5Q2q/cJCUdbor6EmT/AOPsBnqPZeehNaqWitImd2romXtw7j+zLje7gFPf9VKE7h4XRUxbq2F8K4KXiMaDLNPK49KHq/qCr8p/XoglYirMSjM8kxFG6qa2PToD5N3NUmwfFs//2i2hLWk1jFZS1wkCr0i5fjT/AGHiiC0KvZjG3s1rvx1fkXFqFXswHabJjnrSm+ARfUPic61nrdAAAAAElFTkSuQmCC") no-repeat;
-		background-position: center;
-	}*/ }
+  right: 1em;
+  bottom: 8em; }
+
+.ol-touch .ol-geolocate {
+  bottom: 1.5em;
+  right: .5em; }
 
 .ol-mouse-position {
   background: #fff;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  bottom: 36px;
+  border-radius: 2px;
+  bottom: 3em;
   font-size: .75em;
-  left: 8px;
+  left: .6666em;
   padding: 2px 6px 2px 6px;
   min-width: 100px;
-  position: absolute; }
+  position: absolute;
+  will-change: contents, width; }
 
 .ol-mouse-position:before {
   content: "\e062";
@@ -8518,14 +8480,20 @@ table.dataTable {
 .ol-mouse-position:empty {
   display: none; }
 
+.ol-touch .ol-mouse-position {
+  display: none; }
+
 .ol-scale-line {
   background: #fff;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  bottom: 8px;
-  left: 8px;
+  border-radius: 2px;
+  bottom: .5em;
+  left: .5em;
   padding: 2px;
   position: absolute; }
+
+.ol-touch .ol-scale-line {
+  display: none; }
 
 .ol-scale-line-inner {
   border: 1px solid #000;
@@ -8556,15 +8524,18 @@ table.dataTable {
   padding: 2px; }
 
 .ol-control:hover {
-  background-color: rgba(255, 255, 255, 0.6); }
+  background-color: rgba(255, 255, 255, 0.4); }
 
 .ol-zoom {
-  top: .5em;
-  left: .5em; }
+  bottom: 1.5em;
+  right: 1em; }
+
+.ol-touch .ol-zoom {
+  display: none; }
 
 .ol-rotate {
-  top: .5em;
-  right: .5em;
+  bottom: 1.5em;
+  right: 3.25em;
   transition: opacity .25s linear, visibility 0s linear; }
 
 .ol-rotate.ol-hidden {
@@ -8573,8 +8544,11 @@ table.dataTable {
   transition: opacity .25s linear, visibility 0s linear .25s; }
 
 .ol-zoom-extent {
-  top: 4.643em;
-  left: .5em; }
+  bottom: 6em;
+  right: 1em; }
+
+.ol-touch .ol-zoom-extent {
+  display: none; }
 
 .ol-zoom-extent span.glyphicon {
   top: 3px; }
@@ -8612,6 +8586,9 @@ table.dataTable {
 .ol-zoom-extent button {
   line-height: 1.4em; }
 
+ol-geolocate button {
+  line-height: 1em; }
+
 .ol-compass {
   display: block;
   font-weight: 400;
@@ -8621,13 +8598,8 @@ table.dataTable {
 .ol-touch .ol-control button {
   font-size: 1.5em; }
 
-.ol-touch .ol-zoom-extent {
-  top: 5.5em; }
-
 .ol-control button:focus, .ol-control button:hover {
-  text-decoration: none;
-  /*background-color: #4c6079;
-	background-color: rgba(0,60,136,.7)*/ }
+  text-decoration: none; }
 
 .ol-zoom .ol-zoom-in {
   border-radius: 2px 2px 0 0;
@@ -8637,18 +8609,18 @@ table.dataTable {
   border-radius: 0 0 2px 2px; }
 
 .ol-attribution {
-  border-radius: 4px 0 0;
-  text-align: right;
+  border-radius: 2px 0 0;
   bottom: 0;
+  line-height: .75em;
+  max-width: calc(80% - 1.3em);
   right: 0;
-  max-width: calc(100% - 1.3em); }
+  text-align: right; }
 
 .ol-attribution ul {
   margin: 0;
-  padding: 0 .5em;
+  padding: .15em .25em;
   font-size: .75em;
-  line-height: 1.375em;
-  color: #000;
+  color: #333;
   text-shadow: 0 0 2px #fff; }
 
 .ol-attribution li {
@@ -8662,6 +8634,13 @@ table.dataTable {
 .ol-attribution img {
   max-height: 2em;
   max-width: inherit; }
+
+.ol-attribution a {
+  color: #333;
+  text-decoration: none; }
+
+.ol-attribution a:visited, .ol-attribution a:active {
+  color: #333; }
 
 .ol-attribution button, .ol-attribution ul {
   display: inline-block; }
@@ -8707,29 +8686,6 @@ table.dataTable {
   border-radius: 2px;
   border: 2px solid red; }
 
-.ol-zoomslider {
-  top: 4.5em;
-  left: .5em;
-  width: 24px;
-  height: 200px; }
-
-.ol-zoomslider-thumb {
-  position: absolute;
-  background: #7b98bc;
-  background: rgba(0, 60, 136, 0.5);
-  border-radius: 2px;
-  cursor: pointer;
-  height: 10px;
-  width: 22px;
-  margin: 3px; }
-
-.ol-touch .ol-zoomslider {
-  top: 5.5em;
-  width: 2.052em; }
-
-.ol-touch .ol-zoomslider-thumb {
-  width: 1.8em; }
-
 .ol-overviewmap {
   left: .5em;
   bottom: .5em; }
@@ -8763,41 +8719,81 @@ table.dataTable {
   border: 2px dotted rgba(0, 60, 136, 0.7); }
 
 .geomap-help-btn {
-  top: 10px;
-  right: 10px; }
+  right: .5em;
+  top: .5em;
+  background-color: transparent; }
+
+.geomap-help-btn:focus, .geomap-help-btn:hover {
+  background-color: transparent; }
+
+.geomap-help-btn button {
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff; }
+
+.ol-touch .geomap-help-btn {
+  display: none; }
 
 .geomap-help-dialog {
   background-color: white;
-  width: auto;
-  margin: 10px;
   height: auto;
+  margin: 10px;
+  padding: 0;
+  right: 0;
   top: 0;
-  right: 0; }
+  width: auto; }
 
 .geomap-help-dialog {
   background-color: white;
-  width: auto;
-  margin: 10px;
   height: auto;
+  margin: 10px;
+  right: 0;
   top: 0;
-  right: 0; }
+  width: auto; }
   .geomap-help-dialog a.btn {
-    position: absolute;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    top: 0;
-    right: 0;
+    color: #333;
     font-family: Arial, Baskerville, monospace;
     font-size: 28px;
     font-weight: 700;
-    color: #333;
+    height: 44px;
+    line-height: 44px;
+    padding: 0;
+    position: absolute;
+    right: 0;
     text-align: center;
     text-decoration: none;
-    padding: 0; }
+    top: 0;
+    width: 44px; }
 
 .geomap-help-dialog:hover {
   background-color: white; }
+
+.tooltip-txt::after {
+  border-color: silver transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px;
+  content: " ";
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%; }
+
+.tooltip-txt {
+  background: silver;
+  border: solid 1px silver;
+  border-radius: 5px;
+  bottom: 100%;
+  color: #333333;
+  cursor: default;
+  font-size: .80em;
+  left: 50%;
+  margin-left: -60px;
+  padding: 5px 0;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2)); }
 
 /*
  * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)

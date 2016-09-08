@@ -202,6 +202,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			},{
 				"id": "cities",
 				"zoom": true,
+				"tooltips": true,
+				"tooltipText": "Population de 2011",
 				"popups": true,
 				"popupsInfo": {
 					"content": "<div style=\"white-space:nowrap;\"><p><strong>Subdivision de recensement: </strong>_Subdivision de recensement<div><a href=\"#\" class=\"button\" role=\"button\" title=\"Zoom à la ville\" aria-label=\"Zoom à la ville\" onclick=\"wb.doc.zoomFeature()\">Zoom à la ville</a></div></div>"
@@ -250,14 +252,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 		}'>
 
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-9 form-group">
 				<!-- Insert Map Start (mandatory) -->
 				<div class="wb-geomap-map"></div>
 				<!-- Insert Map End -->
 			</div>
 
 			<!-- Insert Legend Start (optional) -->
-			<section class="col-md-3">
+			<section class="col-md-3 form-group">
 				<div class="panel panel-default">
 					<header class="panel-heading">
 						<h3 class="panel-title">Légende</h3>
@@ -276,9 +278,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				<div class="wb-geomap-layers col-md-12">
 					<h3>Exemple - Données dans le fichier HTML</h3>
 					<p>Les données est créées à partir des tables suivantes. Un attribut <code>data-geometry</code> contient la géometry et un attribut <code>data-type</code> contient le type (wkt ou bbox) ont été ajoutés à chaque ligne.</p>
-					<section class="panel panel-default">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="panel-title">Points</h4>
+							<div class="panel-title">Points</div>
 						</div>
 						<div class="panel-body">
 							<table id="cities" aria-label="Points" class="table wb-tables">
@@ -344,11 +346,11 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 								</tbody>
 							</table>
 						</div>
-					</section>
+					</div>
 
-					<section class="panel panel-default">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="panel-title">Boîtes des délimitations</h4>
+							<div class="panel-title">Boîtes des délimitations</div>
 						</div>
 						<div class="panel-body">
 							<table id="bbox" aria-label="Boîtes des délimitations" class="table table-condensed">
@@ -371,7 +373,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 								</tbody>
 							</table>
 						</div>
-					</section>
+					</div>
 					<div class="row">
 						<section class="col-md-12">
 							<h3>Exemple - Données extérieure &amp; provenant de fichiers</h3>
