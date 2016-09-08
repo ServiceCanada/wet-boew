@@ -34,10 +34,12 @@
 			},{
 				"id": "cities",
 				"zoom": true,
+				"tooltips": true,
+				"tooltipText": "Population 2011",
 				"popups": true,
 				"visible": true,
 				"popupsInfo": {
-					"content": "<div style=\"white-space:nowrap;\"><p><strong>Census subdivision: </strong>_Census subdivision<div><a href=\"#\" class=\"button\" role=\"button\" title=\"Zoom to city\" aria-label=\"Zoom to city\" onclick=\"wb.doc.zoomFeature()\">Zoom to city</a></div></div>"
+					"content": "<div style=\"white-space:nowrap;\"><strong>Census subdivision: </strong>_Census subdivision<br/><strong>Population: </strong>_Population 2011</div>"
 				},
 				"style": {
 					"type": "rule",
@@ -83,14 +85,14 @@
 		}'>
 
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-9 form-group">
 				<!-- Insert Map Start (mandatory) -->
 				<div class="wb-geomap-map"></div>
 				<!-- Insert Map End -->
 			</div>
 
 			<!-- Insert Legend Start (optional) -->
-			<section class="col-md-3">
+			<section class="col-md-3 form-group">
 				<div class="panel panel-default">
 					<header class="panel-heading">
 						<h3 class="panel-title">Legend</h3>
@@ -109,9 +111,9 @@
 				<div class="wb-geomap-layers col-md-12">
 					<h3>Example - Inline Layer Data</h3>
 					<p>Layers are created from the following tables. An attribute <code>data-geometry</code> to hold the geometry and an attribute <code>data-type</code> to hold the geometry type (wkt or bbox) are required for each row.</p>
-					<section class="panel panel-default">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="panel-title">Points</h4>
+							<div class="panel-title">Points</div>
 						</div>
 						<div class="panel-body">
 							<table id="cities" aria-label="Points" class="table wb-tables">
@@ -177,11 +179,11 @@
 								</tbody>
 							</table>
 						</div>
-					</section>
+					</div>
 
-					<section class="panel panel-default">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="panel-title">Bounding Boxes</h4>
+							<div class="panel-title">Bounding Boxes</div>
 						</div>
 						<div class="panel-body">
 							<table id="bbox" aria-label="Bounding Boxes" class="table table-condensed">
@@ -204,7 +206,7 @@
 								</tbody>
 							</table>
 						</div>
-					</section>
+					</div>
 					<div class="row">
 						<section class="col-md-12">
 							<h3>Example - Remote &amp; File-based Layer Data</h3>
