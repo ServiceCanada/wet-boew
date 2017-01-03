@@ -182,29 +182,10 @@ var wet_boew_geomap = {
 			}
 		},
 		{
-			title: "JSON (GeoGratis)",
-			caption: "This is a sample dataset loaded from a remote JSON resource, in this case the GeoGratis API.",
-			type: "json",
-			url: "//geogratis.gc.ca/api/en/nrcan-rncan/ess-sst",
-			params: {
-				alt: "json",
-				q: "alluvial"
-			},
-			visible: false,
-			datatable: true,
-			root: "products",
-			popups: true,
-			attributes: {
-				title: "Title",
-				summary: "Abstract",
-				author: "Author"
-			}
-		},
-		{
 			title: "JSON (Earthquakes)",
 			caption: "This is a sample dataset loaded from a remote JSON resource, in this case the Earthquakes API.",
 			type: "json",
-			url: "//www.earthquakescanada.nrcan.gc.ca/api/earthquakes/latest/7d.json",
+			url: "//www.earthquakescanada.nrcan.gc.ca/api/earthquakes/latest/30d.json",
 			visible: false,
 			popups: true,
 			datatable: true,
@@ -217,87 +198,87 @@ var wet_boew_geomap = {
 			style: {
 				type: "rule",
 				rule: [
-				{
-					field: "Magnitude",
-					value: [ 2 ],
-					filter: "LESS_THAN",
-					name: "M < 2",
-					init: {
-						strokeColor: "#333333",
-						fillColor: "#000066",
-						pointRadius: 2.5,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
+					{
+						field: "Magnitude",
+						value: [ 2 ],
+						filter: "LESS_THAN",
+						name: "M < 2",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#000066",
+							pointRadius: 2.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 2, 2.9 ],
+						filter: "BETWEEN",
+						name: "M-2",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#6600cc",
+							pointRadius: 4.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 3, 3.9 ],
+						filter: "BETWEEN",
+						name: "M-3",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#990099",
+							pointRadius: 6.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 4, 4.9 ],
+						filter: "BETWEEN",
+						name: "M-4",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#ff0000",
+							pointRadius: 8,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 5, 5.9 ],
+						filter: "BETWEEN",
+						name: "M-5",
+						init: {
+							graphicName: "star",
+							strokeColor: "#333333",
+							fillColor: "#ff6600",
+							pointRadius: 14,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 5.9 ],
+						filter: "GREATER_THAN",
+						name: "M-6+",
+						init: {
+							graphicName: "star",
+							strokeColor: "#333333",
+							fillColor: "#ff9933",
+							pointRadius: 18,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
 					}
-				},
-				{
-					field: "Magnitude",
-					value: [2, 2.9],
-					filter: "BETWEEN",
-					name: "M-2",
-					init: {
-						strokeColor: "#333333",
-						fillColor: "#6600cc",
-						pointRadius: 4.5,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
-					}
-				},
-				{
-					field: "Magnitude",
-					value: [ 3, 3.9 ],
-					filter: "BETWEEN",
-					name : "M-3",
-					init: {
-						strokeColor: "#333333",
-						fillColor: "#990099",
-						pointRadius: 6.5,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
-					}
-				},
-				{
-					field: "Magnitude",
-					value: [ 4, 4.9 ],
-					filter: "BETWEEN",
-					name: "M-4",
-					init: {
-						strokeColor: "#333333",
-						fillColor: "#ff0000",
-						pointRadius: 8,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
-					}
-				},
-				{
-					field: "Magnitude",
-					value: [ 5, 5.9 ],
-					filter: "BETWEEN",
-					name: "M-5",
-					init: {
-						graphicName: "star",
-						strokeColor: "#333333",
-						fillColor: "#ff6600",
-						pointRadius: 14,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
-					}
-				},
-				{
-					field: "Magnitude",
-					value: [ 5.9 ],
-					filter: "GREATER_THAN",
-					name: "M-6+",
-					init: {
-						graphicName: "star",
-						strokeColor: "#333333",
-						fillColor: "#ff9933",
-						pointRadius: 18,
-						fillOpacity: 0.8,
-						strokeWidth: 1.0
-					}
-				}
-			] }
+				] }
 		},
 		{
 			title: "GeoJSON (CartoDB)",

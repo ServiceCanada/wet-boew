@@ -190,23 +190,103 @@ var wet_boew_geomap = {
 			}
 		},
 		{
-			title: "JSON (GeoGratis)",
-			caption: "Ceci est un exemple d'un jeu de données JSON chargé à partir d'un site externe, dans ce cas-ci Géogratis.",
+			title: "JSON (Séismes récents)",
+			caption: "*NEEDS TRANSLATION*This is a sample dataset loaded from a remote JSON resource, in this case the Earthquakes API.",
 			type: "json",
-			url: "//geogratis.gc.ca/api/fr/nrcan-rncan/ess-sst",
-			params: {
-				alt: "json",
-				q: "alluvial"
-			},
+			url: "//www.earthquakescanada.nrcan.gc.ca/api/earthquakes/latest/30d.json",
 			visible: false,
-			datatable: false,
 			popups: true,
-			root: "products",
+			datatable: true,
+			zoom: true,
 			attributes: {
-				title: "Titre",
-				summary: "Résumé",
-				author: "Autheur"
-			}
+				location: { path: "en", alias: "Localisation" },
+				magnitude: "Magnitude",
+				origin_time: "Time"
+			},
+			style: {
+				type: "rule",
+				rule: [
+					{
+						field: "Magnitude",
+						value: [ 2 ],
+						filter: "LESS_THAN",
+						name: "M < 2",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#000066",
+							pointRadius: 2.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 2, 2.9 ],
+						filter: "BETWEEN",
+						name: "M-2",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#6600cc",
+							pointRadius: 4.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 3, 3.9 ],
+						filter: "BETWEEN",
+						name: "M-3",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#990099",
+							pointRadius: 6.5,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 4, 4.9 ],
+						filter: "BETWEEN",
+						name: "M-4",
+						init: {
+							strokeColor: "#333333",
+							fillColor: "#ff0000",
+							pointRadius: 8,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 5, 5.9 ],
+						filter: "BETWEEN",
+						name: "M-5",
+						init: {
+							graphicName: "star",
+							strokeColor: "#333333",
+							fillColor: "#ff6600",
+							pointRadius: 14,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					},
+					{
+						field: "Magnitude",
+						value: [ 5.9 ],
+						filter: "GREATER_THAN",
+						name: "M-6+",
+						init: {
+							graphicName: "star",
+							strokeColor: "#333333",
+							fillColor: "#ff9933",
+							pointRadius: 18,
+							fillOpacity: 0.8,
+							strokeWidth: 1.0
+						}
+					}
+				] }
 		},
 		{
 			title: "GeoJSON (CartoDB)",
